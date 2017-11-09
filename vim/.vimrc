@@ -122,6 +122,6 @@ let g:jsx_ext_required = 0
 map <C-t> :VimuxPromptCommand<CR>
 map <C-s> :VimuxRunLastCommand<CR>
 let g:VimuxOrientation = "h"
-let g:VimuxPromptString = ">"
+let g:VimuxPromptString = "> "
 
 execute pathogen#infect()
