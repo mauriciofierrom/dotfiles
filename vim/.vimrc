@@ -62,6 +62,7 @@ set noshowmatch
 set splitbelow
 set splitright
 set cursorline
+set termguicolors
 
 " if (has("termguicolors"))
 "   set termguicolors
@@ -82,8 +83,7 @@ let g:NERDTreeWinSize = 31
 "nnoremap <C-s>     :sp term://zsh<CR><CR><a>
 
 " Power fonts - needed for airline to render properly
-set guifont=Roboto\ Mono\ for\ Powerline\ 9
-" set guifont=Droid\ Sans\ Mono\ 9
+set guifont=Meslo\ LG\ S\ for\ Powerline\ 9
 
 " Autocomplete with Ctrl + Space
 inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
@@ -194,6 +194,8 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Yggdroot/indentLine'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
