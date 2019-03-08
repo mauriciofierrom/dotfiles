@@ -71,12 +71,15 @@ set termguicolors
 " colorscheme spacemacs-theme
 colorscheme gruvbox
 " colorscheme solarized
-let g:airline_powerline_fonts = 1
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:airline_theme = 'gruvbox'
+" let g:airline_powerline_fonts = 1
+" let g:nerdtree_tabs_open_on_console_startup=1
+" let g:airline_theme = 'gruvbox'
+let g:lightline = {}
+let g:lightline.colorscheme = 'gruvbox'
+
 set laststatus=2
-nnoremap <silent> <F8> :NERDTreeToggle<CR>
-let g:NERDTreeWinSize = 31
+" nnoremap <silent> <F8> :NERDTreeToggle<CR>
+" let g:NERDTreeWinSize = 31
 
 " Terminal mappings
 "nnoremap <C-t>     :vsplit term://zsh<CR><a>
@@ -117,7 +120,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_ruby_checkers = ['rubocop', 'reek', 'mri']
@@ -150,13 +153,31 @@ sunmap w
 sunmap b
 sunmap e
 
+" SuperTab settings
+let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+
 " Vimux settings
 map <C-t> :VimuxPromptCommand<CR>
-map <C-s> :VimuxRunLastCommand<CR>
+" map <C-s> :VimuxRunLastCommand<CR>
+map <C-s> :SyntasticCheck<CR>
 map zz :VimuxZoomRunner<CR>
 
 let g:VimuxOrientation = "h"
 let g:VimuxPromptString = "> "
+
+" Hdevtools settings
+au FileType haskell nnoremap <buffer> <F2> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsClear<CR>
+
+" ReasonML Stuff
+let g:LanguageClient_serverCommands = {
+    \ 'reason': ['ocaml-language-server', '--stdio'],
+    \ 'ocaml': ['ocaml-language-server', '--stdio'],
+    \ }
+
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<cr>
+nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<cr>
+nnoremap <silent> <cr> :call LanguageClient_textDocument_hover()<cr>
 
 " Installs plug.vim
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -165,6 +186,32 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources={} 
+let g:deoplete#sources._=['buffer', 'member', 'tag', 'file', 'omni', 'ultisnips'] 
+" let g:deoplete#auto_complete =1
+let g:deoplete#omni#input_patterns={} 
+let g:deoplete#omni#input_patterns.scala='[^. *\t]\.\w*'
+
+" Linting with Neomake
+let g:neomake_sbt_maker = {
+      \ 'exe': 'sbt',
+      \ 'args': ['-Dsbt.log.noformat=true', 'compile'],
+      \ 'append_file': 0,
+      \ 'auto_enabled': 1,
+      \ 'output_stream': 'stdout',
+      \ 'errorformat':
+          \ '%E[%trror]\ %f:%l:\ %m,' .
+            \ '%-Z[error]\ %p^,' .
+            \ '%-C%.%#,' .
+            \ '%-G%.%#'
+     \ }
+
+let g:neomake_enabled_makers = ['sbt']
+let g:neomake_verbose=3
+
+" Neomake on text change
+" autocmd InsertLeave,TextChanged * update | Neomake! sbt
 " Plugins will be downloaded under the specified directory
 call plug#begin('~/.vim/plugged')
 
@@ -177,11 +224,12 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'purescript-contrib/purescript-vim'
 Plug 'vim-syntastic/syntastic'
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 Plug 'kchmck/vim-coffee-script'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-obsession'
@@ -194,14 +242,18 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Yggdroot/indentLine'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'airblade/vim-gitgutter'
-Plug 'ervandew/supertab'
-Plug 'benmills/vimux'
+Plug 'tpope/vim-vinegar'
+Plug 'reasonml-editor/vim-reason-plus'
+Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
+Plug 'derekwyatt/scala'
+Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
+Plug 'LnL7/vim-nix'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'Shougo/neco-syntax'
 endif
 
 call plug#end()
