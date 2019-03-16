@@ -26,8 +26,6 @@ alias ts="tmuxinator"
 # export PATH=/home/mauricio/node_modules/mongodb-migrations/bin:$PATH
 export EDITOR='nvim'
 export PATH="$PATH:$HOME/.rvm/bin"
-export PATH=/home/mauricio/projects/javascript/mongodb-migrations/bin:$PATH
-export PATH=/home/mauricio/Software/eta:$PATH
 export PATH="$HOME/Software/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
