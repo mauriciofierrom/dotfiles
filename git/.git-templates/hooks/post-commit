@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if compgen -G "*.cabal" > /dev/null || compgen -G "package.yaml" > /dev/null; then
+    hasktags -c -R -f tags .
+elif [ -f "build.sbt" ]; then
+    ctags -R .
+fi
