@@ -34,7 +34,7 @@ set tw=80
 set shiftwidth=2
 set tabstop=2
 set expandtab
-set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git,.cabal-sandbox,node_modules
+set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git,.cabal-sandbox,node_modules,dist-newstyle
 set wildmode=longest,list,full
 set wildmenu
 set completeopt+=longest
