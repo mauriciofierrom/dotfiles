@@ -303,6 +303,7 @@ Plug 'LnL7/vim-nix'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'ervandew/supertab'
+Plug 'purescript-contrib/purescript-vim'
 
 call plug#end()
 
