@@ -125,6 +125,9 @@ sunmap w
 sunmap b
 sunmap e
 
+" SuperTab settings
+let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+
 " Vimux settings
 map <C-t> :VimuxPromptCommand<CR>
 map zz :VimuxZoomRunner<CR>
@@ -140,20 +143,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 "Coc settings
-
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 " Use <c-space> to trigger completion.
 if has('nvim')
@@ -313,6 +302,7 @@ Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'LnL7/vim-nix'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
+Plug 'ervandew/supertab'
 
 call plug#end()
 
