@@ -304,6 +304,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'ervandew/supertab'
 Plug 'purescript-contrib/purescript-vim'
+Plug 'vmchale/dhall-vim'
 
 call plug#end()
 
