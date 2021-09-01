@@ -190,7 +190,6 @@ Plug 'folke/lsp-colors.nvim'
 Plug 'folke/todo-comments.nvim'
 " Required by todo-comments
 Plug 'nvim-lua/plenary.nvim'
->>>>>>> Add lsp and related/other plugins
 
 call plug#end()
 

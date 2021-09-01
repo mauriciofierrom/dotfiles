@@ -21,11 +21,23 @@ antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
 # Tell Antigen that you're done.
 antigen apply
 
-alias ts="tmuxinator"
+setopt histignorespace
 
-# export PATH=/home/mauricio/node_modules/mongodb-migrations/bin:$PATH
-export EDITOR='nvim'
+alias u="cd .."
+alias t="tree -L"
+alias ts="tmuxinator"
+alias cb="cabal build"
+alias cbe="cabal build && cabal exec $(basename $(pwd))"
+
+export EDITOR="nvim"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$HOME/Software/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/Software/firefox:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+# if [ -e /home/mauricio/.nix-profile/etc/profile.d/nix.sh ]; then . /home/mauricio/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+[ -f "/home/mauricio/.ghcup/env" ] && source "/home/mauricio/.ghcup/env" # ghcup-env
+
+eval "$(direnv hook zsh)"
