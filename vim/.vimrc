@@ -142,6 +142,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" Open Gstatus on \gs
+map <Leader>gs :Gstatus<CR>
+
 " Neomake on text change
 " autocmd InsertLeave,TextChanged * update | Neomake! sbt
 " Plugins will be downloaded under the specified directory
