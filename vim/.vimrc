@@ -183,6 +183,14 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'ervandew/supertab'
 Plug 'purescript-contrib/purescript-vim'
 Plug 'vmchale/dhall-vim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'neovim/nvim-lspconfig'
+Plug 'folke/trouble.nvim'
+Plug 'folke/lsp-colors.nvim'
+Plug 'folke/todo-comments.nvim'
+" Required by todo-comments
+Plug 'nvim-lua/plenary.nvim'
+>>>>>>> Add lsp and related/other plugins
 
 call plug#end()
 
