@@ -47,6 +47,8 @@ local on_attach = function(client, bufnr)
 
   buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
   buf_set_keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+  buf_set_keymap("n", "<leader>hi", "<cmd>lua vim.lsp.buf.incoming_calls()<CR>", opts)
+  buf_set_keymap("n", "<leader>ho", "<cmd>lua vim.lsp.buf.outgoing_calls()<CR>", opts)
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
@@ -91,4 +93,9 @@ lua << EOF
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
   }
+lua<< EOF
+-- configure the litee.nvim library
+require('litee.lib').setup({})
+-- configure litee-calltree.nvim
+require('litee.calltree').setup({})
 EOF

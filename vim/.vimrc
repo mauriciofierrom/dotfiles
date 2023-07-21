@@ -190,6 +190,8 @@ Plug 'folke/lsp-colors.nvim'
 Plug 'folke/todo-comments.nvim'
 " Required by todo-comments
 Plug 'nvim-lua/plenary.nvim'
+Plug 'ldelossa/litee.nvim'
+Plug 'ldelossa/litee-calltree.nvim'
 
 call plug#end()
 
