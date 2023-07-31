@@ -93,9 +93,24 @@ lua << EOF
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
   }
+EOF
+
 lua<< EOF
 -- configure the litee.nvim library
 require('litee.lib').setup({})
 -- configure litee-calltree.nvim
 require('litee.calltree').setup({})
+EOF
+
+lua<< EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "elixir" },
+  highlight = {
+    enable = true,
+    }
+  }
+EOF
+
+lua<< EOF
+require("elixir").setup()
 EOF
