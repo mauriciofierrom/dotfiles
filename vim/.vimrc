@@ -144,6 +144,7 @@ endif
 
 " Open Gstatus on \gs
 map <Leader>gs :Gstatus<CR>
+let mapleader = ","
 
 " Neomake on text change
 " autocmd InsertLeave,TextChanged * update | Neomake! sbt
@@ -190,6 +191,8 @@ Plug 'folke/lsp-colors.nvim'
 Plug 'folke/todo-comments.nvim'
 " Required by todo-comments
 Plug 'nvim-lua/plenary.nvim'
+Plug 'pbrisbin/vim-syntax-shakespeare'
+Plug 'unisonweb/unison', { 'branch': 'trunk', 'rtp': 'editor-support/vim' }
 Plug 'ldelossa/litee.nvim'
 Plug 'ldelossa/litee-calltree.nvim'
 
