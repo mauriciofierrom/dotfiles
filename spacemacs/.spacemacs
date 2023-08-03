@@ -39,6 +39,8 @@ This function should only modify configuration layer settings."
      yaml
      lsp
      (haskell :variables haskell-completion-backend 'lsp)
+     elixir
+     dap
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
