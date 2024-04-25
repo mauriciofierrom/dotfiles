@@ -92,13 +92,14 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " Disable by default
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [ "ruby", "javascript" ],'passive_filetypes': [] }
+let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_ruby_checkers = ['rubocop', 'reek', 'mri']
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Enable JSX syntax in any js file
 let g:jsx_ext_required = 0
@@ -146,6 +147,15 @@ endif
 map <Leader>gs :Gstatus<CR>
 let mapleader = ","
 
+" Call black python formatter on save on .py files
+augroup black_on_save
+  autocmd!
+  autocmd BufWritePre *.py Black
+augroup end
+
+# Disable caching to have new files appear by default instead of having to bust the cache using <F5> every time. Specially usefull when using Phoenix/Rails
+let g:ctrlp_use_caching = 0
+
 " Neomake on text change
 " autocmd InsertLeave,TextChanged * update | Neomake! sbt
 " Plugins will be downloaded under the specified directory
@@ -165,7 +175,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'rainerborene/vim-reek'
 Plug 'tpope/vim-rvm'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
@@ -197,6 +206,8 @@ Plug 'ldelossa/litee.nvim'
 Plug 'ldelossa/litee-calltree.nvim'
 Plug 'elixir-tools/elixir-tools.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'psf/black', { 'branch': 'stable' }
+Plug 'prettier/vim-prettier'
 
 call plug#end()
 
