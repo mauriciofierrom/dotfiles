@@ -77,3 +77,14 @@
 (use-package! lsp-tailwindcss)
 (after! lsp-haskell
   (setq lsp-haskell-server-path "haskell-language-server"))
+(use-package! whitespace
+  :config
+  (setq
+    global-whitespace-mode t
+    whitespace-style '(face tabs tab-mark spaces space-mark trailing lines-tail newline newline-mark)
+    whitespace-display-mappings '(
+      (space-mark   ?\     [?\u00B7]     [?.])
+      (space-mark   ?\xA0  [?\u00A4]     [?_])
+      (newline-mark ?\n    [?¬ ?\n])
+      (tab-mark     ?\t    [?\u00BB ?\t] [?\\ ?\t]))))
+(global-whitespace-mode +1)
