@@ -54,7 +54,7 @@ endif
 
 " Lightline settings
 let g:lightline = {}
-let g:lightline.colorscheme = 'gruvbox'
+let g:lightline.colorscheme = 'dracula'
 " Always show the status line
 set laststatus=2
 
@@ -184,6 +184,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-vinegar'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
@@ -198,7 +199,6 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'folke/trouble.nvim'
 Plug 'folke/lsp-colors.nvim'
 Plug 'folke/todo-comments.nvim'
-" Required by todo-comments
 Plug 'nvim-lua/plenary.nvim'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'unisonweb/unison', { 'branch': 'trunk', 'rtp': 'editor-support/vim' }
@@ -211,4 +211,4 @@ Plug 'prettier/vim-prettier'
 
 call plug#end()
 
-colorscheme gruvbox
+colorscheme dracula
