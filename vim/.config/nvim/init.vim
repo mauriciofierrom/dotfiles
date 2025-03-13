@@ -79,10 +79,21 @@ nvim_lsp['hls'].setup {
   filetypes = { 'haskell', 'lhaskell', 'cabal' },
   cabalFormattingProvider = 'cabalfmt',
 }
-  }
-end
-EOF
 
+local path_to_elixirls = vim.fn.expand("/opt/homebrew/bin/elixir-ls")
+
+nvim_lsp['elixirls'].setup {
+  cmd = {path_to_elixirls},
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    elixirLS = {
+      dialyzerEnabled = false,
+      fetchDeps = false
+    }
+  }
+}
+EOF
 
 lua<< EOF
 -- Trouble keybindings
@@ -122,12 +133,11 @@ require('litee.calltree').setup({})
 EOF
 
 lua<< EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "elixir" },
-  highlight = {
-    enable = true,
-    }
-  }
+require("nvim-treesitter.configs").setup({
+				ensure_installed = { "elixir", "eex", "heex" },
+				highlight = { enable = true },
+				indent = { enable = true },
+			})
 EOF
 
 lua<< EOF
