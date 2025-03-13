@@ -1,0 +1,20 @@
+{
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Dracula",
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 2,
+    "editor.overviewRulerBorder": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.occurrencesHighlight": "off",
+    "workbench.editor.showTabs": "none",
+    "workbench.activityBar.location": "hidden",
+    "workbench.editor.tabActionCloseVisibility": false,
+    "workbench.editor.limit.perEditorGroup": true,
+    "workbench.editor.limit.value": 1,
+    "workbench.editor.limit.enabled": true,
+    "git.openRepositoryInParentFolders": "never",
+}
