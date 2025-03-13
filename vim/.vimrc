@@ -144,8 +144,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Open Gstatus on \gs
-map <Leader>gs :Gstatus<CR>
+map <Leader>gs :Git<CR>
 let mapleader = ","
 
 " Call black python formatter on save on .py files
@@ -154,8 +153,9 @@ augroup black_on_save
   autocmd BufWritePre *.py Black
 augroup end
 
-# Disable caching to have new files appear by default instead of having to bust the cache using <F5> every time. Specially usefull when using Phoenix/Rails
+" Disable caching to have new files appear by default instead of having to bust the cache using <F5> every time. Specially usefull when using Phoenix/Rails
 let g:ctrlp_use_caching = 0
+
 
 " Neomake on text change
 " autocmd InsertLeave,TextChanged * update | Neomake! sbt
