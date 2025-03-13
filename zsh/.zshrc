@@ -36,8 +36,10 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/Software/firefox:$PATH"
 export NVM_DIR="$HOME/.nvm"
+
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-if [ -e /home/mauricio/.nix-profile/etc/profile.d/nix.sh ]; then . /home/mauricio/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-[ -f "/home/mauricio/.ghcup/env" ] && source "/home/mauricio/.ghcup/env" # ghcup-env
+if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then . "$HOME/.nix-profile/etc/profile.d/nix.sh"; fi # added by Nix installer
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 eval "$(direnv hook zsh)"
