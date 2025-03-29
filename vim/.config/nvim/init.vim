@@ -73,6 +73,23 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+nvim_lsp.eslint.setup{
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  root_dir = nvim_lsp.util.root_pattern('eslint.config.mjs'),
+  settings = {
+    experimental = {
+      useFlatConfig = true
+    },
+    useESLintClass = true,
+    problems = {
+      shortenToSingleLine = true
+    }
+  }
+}
+
 
 nvim_lsp['purescriptls'].setup {
   on_attach = on_attach,
