@@ -209,6 +209,7 @@ Plug 'elixir-tools/elixir-tools.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'prettier/vim-prettier'
+Plug 'stevearc/conform.nvim'
 
 call plug#end()
 

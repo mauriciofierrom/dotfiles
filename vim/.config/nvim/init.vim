@@ -187,3 +187,13 @@ EOF
 lua<< EOF
 require("elixir").setup({})
 EOF
+
+lua<< EOF
+require("conform").setup({
+  formatters_by_ft = {
+    javascript = { "prettierd", "prettier", stop_after_first = true },
+  }
+})
+EOF
+
+
