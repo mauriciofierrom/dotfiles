@@ -81,27 +81,6 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-" Syntastic stuff
-
-" Trigger checks using ,s
-map <Leader>s :SyntasticCheck<CR>
-
-" Show status in the status line
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" Disable by default
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['javascript', 'ruby'],'passive_filetypes': ['haskell'] }
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_auto_jump = 0
-
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_javascript_checkers = ['eslint']
-
 " Enable JSX syntax in any js file
 let g:jsx_ext_required = 0
 
@@ -169,7 +148,6 @@ Plug 'bkad/CamelCaseMotion'
 Plug 'kien/ctrlp.vim'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'scrooloose/nerdtree'
-Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
