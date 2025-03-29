@@ -90,6 +90,13 @@ nvim_lsp.eslint.setup{
   }
 }
 
+nvim_lsp.ruby_lsp.setup({
+  init_options = {
+    formatter = 'standard',
+    linters = { 'standard' },
+  },
+  rubyPath = "$PATH:$HOME/.rvm/bin",
+})
 
 nvim_lsp['purescriptls'].setup {
   on_attach = on_attach,
