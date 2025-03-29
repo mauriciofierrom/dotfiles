@@ -14,6 +14,13 @@ lua << EOF
 -- require'lspconfig'.hls.setup{}
 local nvim_lsp = require('lspconfig')
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
+})
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
