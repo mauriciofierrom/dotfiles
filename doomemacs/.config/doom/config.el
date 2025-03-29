@@ -21,8 +21,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
-;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
+(setq doom-font (font-spec :family "Fira Code Nerd Font" :size 12))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -87,4 +86,6 @@
       (space-mark   ?\xA0  [?\u00A4]     [?_])
       (newline-mark ?\n    [?¬ ?\n])
       (tab-mark     ?\t    [?\u00BB ?\t] [?\\ ?\t]))))
+
+;; Show whitespace
 (global-whitespace-mode +1)
