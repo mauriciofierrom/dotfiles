@@ -188,6 +188,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'prettier/vim-prettier'
 Plug 'hashivim/vim-terraform'
+Plug 'zenbones-theme/zenbones.nvim'
 Plug 'stevearc/conform.nvim'
 
 call plug#end()
