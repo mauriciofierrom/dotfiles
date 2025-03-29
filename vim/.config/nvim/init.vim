@@ -175,13 +175,15 @@ require('litee.calltree').setup({})
 EOF
 
 lua<< EOF
-require("nvim-treesitter.configs").setup({
-				ensure_installed = { "elixir", "eex", "heex" },
-				highlight = { enable = true },
-				indent = { enable = true },
-			})
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "elixir", "eex", "heex", "lua" },
+  highlight = {
+    enable = true,
+    },
+  indent = { enable = true},
+  }
 EOF
 
 lua<< EOF
-require("elixir").setup()
+require("elixir").setup({})
 EOF
