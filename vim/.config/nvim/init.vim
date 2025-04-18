@@ -105,7 +105,7 @@ nvim_lsp['purescriptls'].setup {
   },
 }
 
-nvim_lsp['tsserver'].setup {
+nvim_lsp['ts_ls'].setup {
   on_attach = on_attach,
   flags = {
     debounce_text_changes = 150,
