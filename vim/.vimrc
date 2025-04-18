@@ -193,4 +193,4 @@ Plug 'stevearc/conform.nvim'
 
 call plug#end()
 
-colorscheme dracula
+colorscheme gruvbox
