@@ -190,6 +190,7 @@ Plug 'prettier/vim-prettier'
 Plug 'hashivim/vim-terraform'
 Plug 'zenbones-theme/zenbones.nvim'
 Plug 'stevearc/conform.nvim'
+Plug 'brenoprata10/nvim-highlight-colors'
 
 call plug#end()
 

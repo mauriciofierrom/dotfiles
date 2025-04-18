@@ -208,3 +208,6 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 EOF
 
+lua<< EOF
+require('nvim-highlight-colors').setup({})
+EOF
