@@ -141,6 +141,7 @@ let g:ctrlp_use_caching = 0
 " Plugins will be downloaded under the specified directory
 call plug#begin('~/.vim/plugged')
 
+
 " Declare the list of plugins
 Plug 'morhetz/gruvbox'
 Plug 'mileszs/ack.vim'
@@ -188,10 +189,11 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'prettier/vim-prettier'
 Plug 'hashivim/vim-terraform'
+Plug 'rktjmp/lush.nvim'
 Plug 'zenbones-theme/zenbones.nvim'
 Plug 'stevearc/conform.nvim'
 Plug 'brenoprata10/nvim-highlight-colors'
 
 call plug#end()
 
-colorscheme gruvbox
+colorscheme zenbones
